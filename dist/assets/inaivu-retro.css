@@ -201,7 +201,10 @@ body {
 }
 
 .about-statement {
+  display: block !important;
   align-self: start;
+  height: auto !important;
+  min-height: 0 !important;
 }
 
 .about h2 {
@@ -211,7 +214,13 @@ body {
 .about-visual {
   position: relative;
   z-index: 1;
-  margin: 1.8rem 0 0;
+  display: block;
+  flex: none !important;
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: 1.25rem 0 0;
   overflow: hidden;
   border: 1px solid rgba(147,219,251,.34);
   border-radius: 1rem;
@@ -221,7 +230,9 @@ body {
 .about-visual img {
   display: block;
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 100% !important;
+  max-height: none !important;
+  aspect-ratio: auto;
   object-fit: cover;
   object-position: center 62%;
 }
