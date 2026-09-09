@@ -1,67 +1,75 @@
 /*
- * inaivu IT — Tamil retro brand layer
- * A restrained editorial treatment inspired by Tamil print, kolam geometry,
- * and the blue of the inaivu identity.
+ * inaivu IT — modern Tamil identity layer
+ * Logo blue + ink black, with subtle olai-chuvadi linework and connected-node motifs.
  */
 :root {
   --inaivu-blue: #118fd1;
   --inaivu-blue-deep: #0874b3;
-  --ink-indigo: #17395d;
-  --paper: #fbf6e9;
-  --paper-deep: #eee1c5;
-  --turmeric: #d8a323;
-  --vermilion: #b84a35;
+  --inaivu-sky: #eaf7fd;
+  --inaivu-ink: #172536;
+  --inaivu-muted: #5d6d7e;
+  --inaivu-line: #d9e8f0;
+  --inaivu-white: #ffffff;
+  --inaivu-accent: #d79b22;
 }
 
 body {
-  color: #21364a;
-  background-color: var(--paper);
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(216,163,35,.055) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 80% 70%, rgba(23,57,93,.04) 0 1px, transparent 1.5px);
-  background-size: 19px 19px, 23px 23px;
+  color: var(--inaivu-ink);
+  background: var(--inaivu-white);
 }
 
 .site-header {
-  background: rgba(251,246,233,.94);
-  border-bottom-color: rgba(23,57,93,.12);
+  background: rgba(255,255,255,.95);
+  border-bottom-color: var(--inaivu-line);
 }
 
-.brand span,
-.site-nav a,
-h1, h2, h3 {
-  color: var(--ink-indigo);
+/* The wordmark rule stays consistent in header, footer and brand-story. */
+.brand > span,
+.inaivu-name {
+  color: var(--inaivu-blue) !important;
 }
+
+.brand > span b,
+.inaivu-name .it {
+  color: #111820 !important;
+}
+
+.site-nav a { color: var(--inaivu-ink); }
 
 .hero {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(216,163,35,.11) 1px, transparent 1px) 0 0/42px 42px,
-    linear-gradient(rgba(17,143,209,.07) 1px, transparent 1px) 0 0/42px 42px,
-    var(--paper);
+    radial-gradient(circle at 12% 21%, rgba(17,143,209,.10) 0 3px, transparent 4px),
+    radial-gradient(circle at 88% 72%, rgba(17,143,209,.09) 0 3px, transparent 4px),
+    linear-gradient(135deg, #fff 0%, #f4fbff 58%, #e9f7fd 100%);
+  background-size: 88px 88px, 112px 112px, auto;
 }
 
-.hero::before,
-.hero::after {
+/* Connected atoms: a quiet visual expression of "inaivu". */
+.hero::before {
   content: "";
   position: absolute;
-  width: 84px;
-  height: 84px;
-  border: 2px solid rgba(184,74,53,.35);
-  transform: rotate(45deg);
+  inset: 8% -5% auto auto;
+  width: min(38vw, 520px);
+  height: 240px;
+  opacity: .22;
+  background:
+    radial-gradient(circle at 12% 32%, var(--inaivu-blue) 0 5px, transparent 6px),
+    radial-gradient(circle at 48% 62%, var(--inaivu-blue) 0 7px, transparent 8px),
+    radial-gradient(circle at 82% 20%, var(--inaivu-blue) 0 5px, transparent 6px),
+    linear-gradient(25deg, transparent 47.8%, var(--inaivu-blue) 48% 48.8%, transparent 49%) 0 0/62% 100%,
+    linear-gradient(-30deg, transparent 48%, var(--inaivu-blue) 48.2% 49%, transparent 49.2%) 100% 0/58% 100%;
+  background-repeat: no-repeat;
   pointer-events: none;
 }
-
-.hero::before { top: 118px; left: -58px; }
-.hero::after { right: -58px; bottom: 48px; }
 
 .hero h1,
 .section-heading h2,
 .about h2,
 .contact h2,
 .profile-dialog h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--inaivu-ink);
   letter-spacing: -.035em;
 }
 
@@ -75,175 +83,271 @@ h1, h2, h3 {
 
 .tamil-signature {
   margin: .35rem 0 1rem;
-  color: var(--vermilion);
-  font-size: clamp(.9rem, 1.4vw, 1.05rem);
+  color: var(--inaivu-blue-deep);
+  font-size: clamp(.9rem,1.4vw,1.05rem);
   font-weight: 700;
-  letter-spacing: .05em;
+  letter-spacing: .035em;
 }
 
 .tamil-note {
   margin: .75rem 0 0;
-  color: #f1c85b;
+  color: #93dbfb;
   font-size: 1rem;
   font-weight: 650;
 }
 
-.eyebrow { color: var(--vermilion); }
-.eyebrow::before { background: var(--turmeric); }
+.eyebrow { color: var(--inaivu-blue-deep); }
+.eyebrow::before { background: var(--inaivu-blue); }
 
 .button {
   background: var(--inaivu-blue-deep);
-  border: 1px solid var(--ink-indigo);
-  box-shadow: 4px 4px 0 var(--turmeric);
+  border: 1px solid var(--inaivu-blue-deep);
+  box-shadow: none;
 }
 
 .button:hover,
 .button:focus-visible {
-  background: var(--ink-indigo);
-  transform: translate(-1px,-1px);
-  box-shadow: 6px 6px 0 var(--turmeric);
+  background: var(--inaivu-ink);
+  border-color: var(--inaivu-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(8,116,179,.18);
 }
 
 .hero-visual img {
-  border: 1px solid rgba(23,57,93,.25);
-  border-radius: 5rem 5rem 1rem 1rem;
-  filter: saturate(.9) sepia(.06);
+  border: 1px solid var(--inaivu-line);
+  border-radius: 1.25rem;
+  filter: none;
 }
 
 .floating-card {
-  border-left: 4px solid var(--turmeric);
-  border-radius: .35rem;
+  border-left: 4px solid var(--inaivu-blue);
+  border-radius: .75rem;
 }
 
-.trust-row strong { color: var(--ink-indigo); }
+.trust-row strong { color: var(--inaivu-ink); }
 
+/* Palm-leaf manuscript reference: fine horizontal incisions, kept light and modern. */
 .heritage-band {
   position: relative;
   z-index: 2;
-  color: #fff6dd;
+  color: #dff5ff;
   background:
-    repeating-linear-gradient(135deg, transparent 0 18px, rgba(255,255,255,.035) 18px 19px),
-    var(--ink-indigo);
-  border-top: 3px solid var(--turmeric);
-  border-bottom: 3px solid var(--vermilion);
+    repeating-linear-gradient(0deg, transparent 0 12px, rgba(255,255,255,.045) 12px 13px),
+    var(--inaivu-ink);
+  border-block: 1px solid rgba(17,143,209,.55);
 }
 
+.heritage-band::before,
+.heritage-band::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 7%;
+  height: 1px;
+  background: var(--inaivu-blue);
+}
+
+.heritage-band::before { left: 0; }
+.heritage-band::after { right: 0; }
+
 .heritage-band .container {
-  min-height: 64px;
+  min-height: 62px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(1rem,4vw,3.5rem);
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
 }
 
 .heritage-band i {
-  color: var(--turmeric);
+  color: var(--inaivu-blue);
   font-style: normal;
-  transform: rotate(45deg);
 }
 
 .services,
 .process,
-.team { background-color: rgba(255,252,243,.78); }
+.team { background: #fff; }
 
 .service-card,
 .project-card,
 .person {
-  border-color: rgba(23,57,93,.18);
-  border-radius: .55rem;
+  border-color: var(--inaivu-line);
+  border-radius: .85rem;
 }
 
 .service-card {
-  border-top: 4px solid var(--inaivu-blue);
-  box-shadow: 0 14px 30px rgba(23,57,93,.055);
+  border-top: 3px solid var(--inaivu-blue);
+  box-shadow: 0 12px 32px rgba(23,37,54,.055);
 }
 
-.service-card:nth-child(3n+2) { border-top-color: var(--turmeric); }
-.service-card:nth-child(3n) { border-top-color: var(--vermilion); }
-.service-card .number { color: var(--vermilion); }
+.service-card:nth-child(3n+2) { border-top-color: #59bae6; }
+.service-card:nth-child(3n) { border-top-color: var(--inaivu-blue-deep); }
+.service-card .number,
 .service-card .icon { color: var(--inaivu-blue-deep); }
 
+/* Light manuscript lines replace the former brown retro surface. */
 .about {
   position: relative;
+  overflow: hidden;
   background:
-    repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,.025) 24px 25px),
-    var(--ink-indigo);
-  border-block: 5px double rgba(216,163,35,.75);
+    repeating-linear-gradient(0deg, transparent 0 29px, rgba(255,255,255,.03) 29px 30px),
+    var(--inaivu-ink);
+  border-block: 3px double rgba(17,143,209,.75);
 }
 
 .about::after {
-  content: "◆  ◇  ◆  ◇  ◆";
+  content: "";
   position: absolute;
-  right: 5vw;
-  bottom: 1rem;
-  color: rgba(216,163,35,.3);
-  font-size: 1.2rem;
-  letter-spacing: .7rem;
+  right: -35px;
+  bottom: -35px;
+  width: 180px;
+  height: 180px;
+  opacity: .18;
+  background:
+    radial-gradient(circle at 50% 8%, #fff 0 5px, transparent 6px),
+    radial-gradient(circle at 92% 50%, #fff 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 92%, #fff 0 5px, transparent 6px),
+    radial-gradient(circle at 8% 50%, #fff 0 5px, transparent 6px),
+    linear-gradient(45deg, transparent 49%, #fff 49.5% 50.5%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, #fff 49.5% 50.5%, transparent 51%);
+  transform: rotate(45deg);
+  pointer-events: none;
 }
 
-.projects { background: var(--paper-deep); }
+.brand-meaning {
+  margin-top: 2rem;
+  padding: 1.25rem 1.4rem;
+  color: var(--inaivu-ink);
+  background: #fff;
+  border: 1px solid rgba(147,219,251,.7);
+  border-left: 4px solid var(--inaivu-blue);
+  border-radius: .75rem;
+  box-shadow: 0 14px 34px rgba(0,0,0,.12);
+}
+
+.brand-meaning .meaning-word {
+  display: flex;
+  align-items: baseline;
+  gap: .15rem;
+  margin-bottom: .55rem;
+  font-size: clamp(1.45rem,2.4vw,2rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+
+.meaning-word .in,
+.meaning-word .vu { color: var(--inaivu-ink); }
+
+.meaning-word .ai {
+  color: var(--inaivu-blue);
+  text-transform: uppercase;
+}
+
+.brand-meaning p {
+  margin: 0;
+  color: var(--inaivu-muted);
+  line-height: 1.7;
+}
+
+.brand-meaning strong { color: var(--inaivu-blue-deep); }
+
+.projects {
+  background:
+    linear-gradient(90deg, rgba(17,143,209,.035) 1px, transparent 1px) 0 0/32px 32px,
+    #f6fbfe;
+}
 
 .project-card {
-  background: rgba(255,252,243,.9);
-  box-shadow: 5px 5px 0 rgba(23,57,93,.09);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(23,37,54,.055);
 }
 
 .project-card:hover {
-  border-color: var(--vermilion);
-  box-shadow: 7px 7px 0 rgba(216,163,35,.45);
+  border-color: var(--inaivu-blue);
+  box-shadow: 0 15px 32px rgba(8,116,179,.13);
 }
 
 .project-mark {
-  background: var(--ink-indigo);
-  color: #fff8e7;
-  border-radius: 50% 50% 46% 54%;
+  background: var(--inaivu-blue-deep);
+  color: #fff;
+  border-radius: 50%;
 }
 
 .project-card.featured {
-  background: var(--ink-indigo);
-  border-color: var(--turmeric);
+  background: var(--inaivu-ink);
+  border-color: var(--inaivu-blue);
 }
 
 .person {
-  background: #fffaf0;
-  box-shadow: 0 0 0 3px #fffaf0, 0 0 0 4px rgba(23,57,93,.16);
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--inaivu-line);
 }
 
 .person:hover,
 .person:focus-visible {
-  box-shadow: 0 0 0 3px #fffaf0, 0 0 0 5px var(--turmeric);
+  box-shadow: 0 0 0 2px var(--inaivu-blue), 0 14px 30px rgba(8,116,179,.10);
 }
 
-.person img {
-  filter: saturate(.88) contrast(1.02);
-}
+.person img { filter: none; }
 
 .person span,
-.project-card span { color: var(--vermilion); }
+.project-card span { color: var(--inaivu-blue-deep); }
 
 .contact {
+  position: relative;
   background:
-    linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,.025) 50%, transparent 50.5%) 0 0/34px 34px,
-    var(--ink-indigo);
-  border-top: 5px solid var(--turmeric);
+    repeating-linear-gradient(0deg, transparent 0 30px, rgba(255,255,255,.025) 30px 31px),
+    var(--inaivu-ink);
+  border-top: 3px solid var(--inaivu-blue);
 }
 
 .contact-form {
-  border-radius: .55rem;
-  border: 1px solid rgba(216,163,35,.5);
+  border-radius: .85rem;
+  border: 1px solid rgba(17,143,209,.45);
+}
+
+.location-card {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: minmax(240px,.7fr) minmax(320px,1.3fr);
+  overflow: hidden;
+  min-height: 330px;
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid rgba(17,143,209,.42);
+  border-radius: 1rem;
+}
+
+.location-copy {
+  padding: clamp(1.5rem,4vw,2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--inaivu-ink);
+}
+
+.location-copy .eyebrow { margin-bottom: .7rem; }
+.location-copy h3 { margin: 0 0 .8rem; font-size: clamp(1.5rem,2.8vw,2rem); }
+.location-copy p { margin: 0; color: var(--inaivu-muted); line-height: 1.7; }
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  min-height: 330px;
+  height: 100%;
+  border: 0;
 }
 
 .profile-dialog {
-  border: 3px double var(--turmeric);
-  border-radius: .6rem;
-  background: var(--paper);
+  border: 2px solid var(--inaivu-blue);
+  border-radius: .85rem;
+  background: #fff;
 }
 
 footer {
-  background: #102d4b;
-  border-top: 1px solid rgba(216,163,35,.55);
+  background: #0f1f30;
+  border-top: 1px solid rgba(17,143,209,.55);
 }
 
 @media (max-width: 760px) {
@@ -256,8 +360,10 @@ footer {
   }
 
   .heritage-band i:nth-of-type(2) { display: none; }
-  .hero-visual img { border-radius: 3rem 3rem .75rem .75rem; }
-  .about::after { display: none; }
+  .hero::before { width: 75vw; opacity: .12; }
+  .hero-visual img { border-radius: 1rem; }
+  .location-card { grid-template-columns: 1fr; }
+  .location-map iframe { min-height: 280px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
