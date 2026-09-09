@@ -350,6 +350,13 @@ footer {
   border-top: 1px solid rgba(17,143,209,.55);
 }
 
+.footer-brand {
+  width: max-content;
+  padding: .4rem .7rem;
+  background: #fff;
+  border-radius: .65rem;
+}
+
 @media (max-width: 760px) {
   .heritage-band .container {
     min-height: 58px;
