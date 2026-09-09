@@ -196,6 +196,18 @@ body {
   border-block: 3px double rgba(17,143,209,.75);
 }
 
+.about-grid {
+  align-items: start;
+}
+
+.about-statement {
+  align-self: start;
+}
+
+.about h2 {
+  color: #fff;
+}
+
 .about-visual {
   position: relative;
   z-index: 1;
@@ -209,8 +221,9 @@ body {
 .about-visual img {
   display: block;
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   object-fit: cover;
+  object-position: center 62%;
 }
 
 .about-visual::after {
