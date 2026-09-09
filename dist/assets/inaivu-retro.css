@@ -426,3 +426,41 @@ footer {
   .button:hover,
   .button:focus-visible { transform: none; }
 }
+
+
+/* A wide connection visual fills the contact column without competing with the form. */
+.contact-copy {
+  min-width: 0;
+}
+
+.contact-visual {
+  width: 100%;
+  aspect-ratio: 8 / 3;
+  margin: clamp(1.75rem, 3vw, 2.5rem) 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(147, 219, 251, .42);
+  border-radius: .9rem;
+  background: #071b2c;
+  box-shadow: 0 18px 48px rgba(3, 18, 31, .28);
+}
+
+.contact-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 900px) {
+  .contact-visual {
+    aspect-ratio: 16 / 7;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-visual {
+    aspect-ratio: 16 / 9;
+  }
+}
