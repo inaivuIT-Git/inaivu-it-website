@@ -177,15 +177,21 @@ body {
 
 .products { position:relative; overflow:hidden; background:radial-gradient(circle at 90% 10%,rgba(17,143,209,.10),transparent 28%),linear-gradient(180deg,#f7fcff 0%,#fff 100%); }
 .products::before { content:""; position:absolute; left:-100px; bottom:-140px; width:360px; aspect-ratio:1; border:1px solid rgba(17,143,209,.12); border-radius:50%; box-shadow:0 0 0 42px rgba(17,143,209,.025),0 0 0 84px rgba(17,143,209,.02); }
-.product-grid { position:relative; display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+.product-grid { position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
 .product-card { min-height:430px; padding:clamp(1.6rem,3vw,2.4rem); display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--inaivu-line); border-radius:1.25rem; background:rgba(255,255,255,.88); box-shadow:0 18px 50px rgba(23,37,54,.07); transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease; }
 .product-card:hover { transform:translateY(-7px); border-color:rgba(17,143,209,.65); box-shadow:0 28px 70px rgba(8,116,179,.14); }
 .product-card-primary { color:#fff; background:linear-gradient(145deg,#0c243b 0%,#0874b3 145%); border-color:rgba(147,219,251,.35); }
 .product-card-kanakku { background:linear-gradient(145deg,#fff 0%,#eef9fe 100%); }
+.product-card-sevai { background:linear-gradient(145deg,#fff 0%,#f3f9ff 100%); }
 .product-topline { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 .product-symbol { width:62px; height:62px; display:grid; place-items:center; border-radius:18px; color:#fff; background:var(--inaivu-blue); font-size:1.55rem; font-weight:850; box-shadow:0 10px 25px rgba(8,116,179,.22); }
 .product-card-primary .product-symbol { color:var(--inaivu-ink); background:#fff; }
+.product-logo { width:68px; height:68px; display:grid; place-items:center; overflow:hidden; border-radius:19px; background:#fff; box-shadow:0 10px 25px rgba(8,116,179,.18); }
+.product-logo img { width:100%; height:100%; object-fit:cover; }
+.product-logo-uduthipaar { padding:.25rem; }
+.product-logo-uduthipaar img { object-fit:contain; }
 .product-badge { padding:.38rem .75rem; border:1px solid rgba(8,116,179,.2); border-radius:999px; color:var(--inaivu-blue-deep); background:rgba(255,255,255,.74); font-size:.72rem; font-weight:800; letter-spacing:.04em; }
+.product-badge-beta { color:#075f45; border-color:rgba(5,150,105,.25); background:#e7f8f1; }
 .product-card-primary .product-badge { color:#dff5ff; border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.09); }
 .product-kicker { margin:0 0 .6rem; color:var(--inaivu-blue-deep); font-size:.76rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
 .product-card-primary .product-kicker { color:#93dbfb; }
@@ -451,6 +457,11 @@ footer {
   .location-map iframe { min-height: 280px; }
   .product-grid { grid-template-columns:1fr; }
   .product-card { min-height:390px; }
+}
+
+@media (min-width: 761px) and (max-width: 1060px) {
+  .product-grid { grid-template-columns:repeat(2,1fr); }
+  .product-card-sevai { grid-column:1/-1; min-height:360px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
